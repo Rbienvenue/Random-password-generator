@@ -1,0 +1,43 @@
+/* ---- css is fun ----- */
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    width: 30vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #f5e8f5;
+    border-radius: .5rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    padding: 2rem 2rem;
+}
+.inputRow{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+button{
+    background: rgb(177, 160, 10);
+    border: none;
+    color:#f5e8f5;
+    margin-top: 2rem;
+    padding: .5rem 0;
+    border-radius: .2rem;
+    width: 70%;
+    font-weight: bolder;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all;
+}
+button:hover{
+    background: hsla(54, 89%, 37%, 0.808);
+    transition: all;
+}
