@@ -1,4 +1,6 @@
 function passwordGenerator (length, includeLowerCaseChars, includeUpperCaseChars, includeNumbers, includeSymbols) {
+    const result = document.getElementById("result");
+    result.style.display = "block";
     const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const numberChars = "0123456789";
@@ -23,6 +25,13 @@ function passwordGenerator (length, includeLowerCaseChars, includeUpperCaseChars
     }
     return password;
 }
+const input = document.getElementById("length");
+const length = input.value;
+const uppercase = document.getElementById("upercaseLetters");
+const lowercase = document.getElementById("lowercaseLetters");
+const numbers = document.getElementById("includeNumbers");
+const symbols = document.getElementById("includeSymbols");
 let password = passwordGenerator (2,true,true,true,true);
+const includeLowerCaseChars = lowercase.checked ? true : false ;
 let result = document.getElementById("result");
-result.textContent=password;
+result.textContent=includeLowerCaseChars;
