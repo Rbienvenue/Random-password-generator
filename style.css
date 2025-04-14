@@ -49,3 +49,24 @@ button:hover{
     text-align: center;
     display: none;
 }
+
+.warning {
+    border: .5px solid salmon;
+    border-radius: .7rem;
+    padding: 0 1rem;
+    margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 75%;
+        top: 10%;
+    }
+    input{
+        width: 60px;
+    }
+    #result{
+        height: auto;
+        width: 100%;
+    }
+}

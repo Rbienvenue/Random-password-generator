@@ -13,15 +13,15 @@
 
         <div class="inputRow">
             <label for="length">Choose password length</label>
-            <input type="text" id="length">
+            <input type="number" id="length">
         </div>
         <div class="inputRow">
             <label for="upercaseLetters">Include uppercase letters</label>
-            <input type="checkbox" id="upercaseLetters">
+            <input type="checkbox" id="uppercaseLetters">
         </div>
         <div class="inputRow">
             <label for="lowercaseLetter">include lower case letters</label>
-            <input type="checkbox" id="lowercaseLetter">
+            <input type="checkbox" id="lowercaseLetters">
         </div>
         <div class="inputRow">
             <label for="includeNumbers">include numbers</label>
@@ -31,8 +31,12 @@
             <label for="includeSymbols">include symbols</label>
             <input type="checkbox" id="includeSymbols">
         </div>
-        <button type="button" onclick="passwordGenerator()">Generate</button>
+        <button type="button" onclick="getInput()">Generate</button>
         <p id="result"></p>
+
+        <div class="warning">
+            <p>Please!! if you want a strong password make sure you select all character sets and choose a length of eight or above</p>
+        </div>
 
     </div>
 

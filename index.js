@@ -12,26 +12,38 @@ function passwordGenerator (length, includeLowerCaseChars, includeUpperCaseChars
     allowedChars += includeNumbers ? numberChars : "";
     allowedChars += includeSymbols ? symbols : "";
 
-    if (length <= 0) {
-        return "Please enter a length greater than 0";
-    }
     if (allowedChars.length == 0) {
-        return "please select one of the character sets";
+        result.textContent = "⚠️ please select one of the character sets";
+        return "";
     }
 
     for (let i = 0 ; i < length ; i++) {
         let randomIndex = Math.floor(Math.random()*allowedChars.length);
         password += allowedChars[randomIndex];
     }
+    result.textContent=`Password is: ${password}`;
     return password;
 }
-const input = document.getElementById("length");
-const length = input.value;
-const uppercase = document.getElementById("upercaseLetters");
-const lowercase = document.getElementById("lowercaseLetters");
-const numbers = document.getElementById("includeNumbers");
-const symbols = document.getElementById("includeSymbols");
-let password = passwordGenerator (2,true,true,true,true);
-const includeLowerCaseChars = lowercase.checked ? true : false ;
-let result = document.getElementById("result");
-result.textContent=includeLowerCaseChars;
+
+function getInput () {
+    const result = document.getElementById("result");
+    result.style.display = "block";
+    const input = document.getElementById("length");
+    const length = parseInt(input.value);
+    const uppercase = document.getElementById("uppercaseLetters");
+    const lowercase = document.getElementById("lowercaseLetters");
+    const numbers = document.getElementById("includeNumbers");
+    const symbols = document.getElementById("includeSymbols");
+
+    if (length < 1) {
+        result.textContent = "⚠️Select a length above 0"
+        return;
+    }
+
+    const includeLowerCaseChars = lowercase.checked;
+    const includeUpperCaseChars = uppercase.checked;
+    const includeNumbers = numbers.checked;
+    const includeSymbols = symbols.checked;
+    
+    passwordGenerator (length,includeLowerCaseChars,includeUpperCaseChars,includeNumbers,includeSymbols);
+}
